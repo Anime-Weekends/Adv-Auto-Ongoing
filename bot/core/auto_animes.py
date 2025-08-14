@@ -331,7 +331,7 @@ async def process_hentai(title, torrent_url, force=False):
                                     file_store_links[qual] = msg.id
                                     await db.saveAnime(hentai_id, ep_no, qual, msg.id)
                                     encoded = await encode('get-' + str(msg.id * abs(Var.FILE_STORE)))
-                                    qual_btns.append(InlineKeyboardButton(f"{btn_formatter.get(qual, qual+'p')}", url=f"https://t.me/{Var.BOT_USERNAME}?start={encoded}"))
+                                    qual_btns.append(InlineKeyboardButton(f"{btn_formatter.get(qual, qual+'p')}", url=f"https://t.me/Marin_Kitagawa_ongoing_bot?start={encoded}"))
                                     try:
                                         if ospath.exists(out_path):
                                             os.remove(out_path)
