@@ -22,7 +22,7 @@ async def web_server():
 
 async def start_server():
     web_app = await web_server()
-    port = int(os.environ.get("PORT", 8000))
+    port = int(os.environ.get("PORT", 8010))
     runner = web.AppRunner(web_app)
     await runner.setup()
     await web.TCPSite(runner, "0.0.0.0", port).start()
