@@ -22,15 +22,13 @@ MANUAL_ANILIST_NAMES = {
 }
 
 CAPTION_FORMAT = """
-<blockquote><b>✦<i> {title} </i>✦</b></blockquote>
-<b>╔━━━━━━━━━━━━━━━━━━━━━╗</b>
-<blockquote><b>⌲ 𝗦𝗲𝗮𝘀𝗼𝗻: <i>{anime_season}</i></b>
-<b>❍ 𝗘𝗽𝗶𝘀𝗼𝗱𝗲: <i>{ep_no}</i></b></blockquote>
-<blockquote><b>〄 𝗔𝘂𝗱𝗶𝗼: <i>{lang}</b></i>
-<b>❐ 𝗦𝘁𝗮𝘁𝘂𝘀: <i>{status}</i></b></blockquote>
-<blockquote><b>◎ 𝗧𝗼𝘁𝗮𝗹 𝗘𝗽𝗶𝘀𝗼𝗱𝗲𝘀: <i>{t_eps}</i></b>
-<b>♡ 𝗚𝗲𝗻𝗿𝗲𝘀: <i>{genres}</i></blockquote></b>
-<b>╚━━━━━━━━━━━━━━━━━━━━━╝</b>
+<b><i><blockquote>➥ {title}</blockquote></i></b>
+
+<b>   ➪ Episode: {ep_no}</b>
+<b>   ➪ Quality: 480p | 720p | 1080p</b> 
+<b>   ➪ Audio: Japanese & English Sub</b>
+
+<b>   ☏ Powerd By : - @Sanctuary_Stardust</b>
 """
 
 MOVIE_CAPTION = """<blockquote><b>✦ {title} ✦</b></blockquote>
