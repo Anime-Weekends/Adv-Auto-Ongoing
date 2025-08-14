@@ -106,6 +106,135 @@ async def detect_audio_type(video_path):
         print(f"Audio detection failed: {e}")
         return "Sub"
 
+async def process_batch_anime(anime_name, torrent_url, audio):
+    import re
+    import time
+    import os
+    import shutil
+    from os import path as ospath
+    import asyncio
+    
+    cleaned_name = clean_anime_title(anime_name)
+    safe_title = re.sub(r'[\\/*?:"<>|\'\n\r\t]', '_', cleaned_name)
+    unique_dir = f"./downloads/{safe_title}"
+    os.makedirs(unique_dir, exist_ok=True)
+
+    aniInfo = TextEditor(cleaned_name)
+    await aniInfo.load_info()
+    all_banners = await db.list_anime_banners()
+    banner_url = None
+    for banner_key, url in all_banners:
+        if banner_key.lower() in anime_name.lower():
+            banner_url = url
+            break
+    if banner_url:
+        poster_url = banner_url
+    elif hasattr(Var, 'ANIME') and Var.ANIME in anime_name:
+        poster_url = Var.CUSTOM_BANNER
+    else:
+        poster_url = aniInfo.adata.get("poster_url", "https://envs.sh/E7p.png?isziC=1")
+
+    channel_to_use = await get_or_create_anime_channel(anime_name, aniInfo)
+
+    channel_valid = False
+    for attempt in range(3):
+        if await validate_channel_id(channel_to_use):
+            channel_valid = True
+            break
+        await asyncio.sleep(2)
+    if not channel_valid:
+        await rep.report(f"Final channel {channel_to_use} is invalid after retries, using main channel", "error")
+        channel_to_use = Var.MAIN_CHANNEL
+
+    dl_path = await TorDownloader(unique_dir).download(torrent_url)
+    if not dl_path or not ospath.exists(dl_path):
+        await rep.report(f"Batch download failed for {anime_name}", "error")
+        return
+
+    batch_dir = dl_path if ospath.isdir(dl_path) else unique_dir
+    video_files = find_video_files(batch_dir)
+    episode_count = len(video_files)
+    if not video_files:
+        await rep.report(f"No video files found in batch for {anime_name}", "error")
+        return
+
+    aniInfo.pdata["audio_type"] = audio
+    caption = await aniInfo.get_caption()
+
+    caption = re.sub(
+        r"(❍\s*𝗘𝗽𝗶𝘀𝗼𝗱𝗲:\s*<i>)[^<]+(</i>)",
+        lambda m: f"{m.group(1)}1-{episode_count}{m.group(2)}",
+        caption
+    )
+
+    try:
+        post_msg = await bot.send_photo(
+            channel_to_use,
+            photo=poster_url,
+            caption=caption
+        )
+    except Exception as e:
+        await rep.report(f"Failed to send batch poster: {e}", "error")
+        post_msg = None
+
+    await mirror_to_main_channel(
+        post_msg=post_msg,
+        photo_url=poster_url,
+        caption=caption,
+        channel_to_use=channel_to_use
+    )
+
+    await asleep(1.5)
+    await rep.report(f"Using channel: {channel_to_use} for anime: {cleaned_name}", "info")
+    await asleep(1.5)
+
+    stat_msg = await bot.send_message(
+        chat_id=channel_to_use,
+        text=f"<blockquote>‣ <b>Anime Name :</b> <b><i>{anime_name}</i></b></blockquote>\n\n<pre><i>Downloading...</i></pre>"
+    )
+
+    await asleep(Var.STICKER_INTERVAL)
+    await send_sticker_to_channel(channel_to_use, Var.STICKER_ID)
+
+    batch_buttons = []
+    for qual in Var.QUALS:
+        qual_msg_ids = []
+        os.makedirs("encode", exist_ok=True)
+        for idx, vfile in enumerate(video_files, 1):
+            ep_num = str(idx).zfill(2)
+            aniInfo.pdata["episode_number"] = ep_num
+            ep_upname = await aniInfo.get_upname(qual)
+            out_path = f"encode/{ep_upname}"
+
+            encoded_path = await FFEncoder(stat_msg, vfile, ep_upname, qual).start_encode()
+            if not encoded_path or not ospath.exists(encoded_path):
+                await rep.report(f"Encoding failed for {vfile} ({qual}p)", "error")
+                continue
+
+            msg = await TgUploader(stat_msg).upload(encoded_path, qual)
+            if msg:
+                qual_msg_ids.append(msg.id)
+            try:
+                if ospath.exists(encoded_path):
+                    os.remove(encoded_path)
+            except Exception:
+                pass
+
+        if qual_msg_ids:
+            first_id = min(qual_msg_ids)
+            last_id = max(qual_msg_ids)
+            batch_string = f"get-{first_id * abs(Var.FILE_STORE)}-{last_id * abs(Var.FILE_STORE)}"
+            batch_link = f"https://t.me/{Var.BOT_USERNAME}?start={await encode(batch_string)}"
+            btn_text = f"{btn_formatter.get(qual, qual+'p')}"
+            batch_buttons.append(InlineKeyboardButton(btn_text, url=batch_link))
+            if post_msg and batch_buttons:
+                btns = [batch_buttons[i:i+2] for i in range(0, len(batch_buttons), 2)]
+                await editMessage(post_msg, caption, InlineKeyboardMarkup(btns))
+
+    await stat_msg.delete()
+    shutil.rmtree(batch_dir, ignore_errors=True)
+    await rep.report(f"Batch processing done and cleaned for {anime_name}", "info")
+
 async def fetch_hentai():
     await rep.report("Fetching Hentai Started !!!", "info")
     processed_urls = set()
@@ -331,7 +460,7 @@ async def process_hentai(title, torrent_url, force=False):
                                     file_store_links[qual] = msg.id
                                     await db.saveAnime(hentai_id, ep_no, qual, msg.id)
                                     encoded = await encode('get-' + str(msg.id * abs(Var.FILE_STORE)))
-                                    qual_btns.append(InlineKeyboardButton(f"{btn_formatter.get(qual, qual+'p')}", url=f"https://t.me/Marin_Kitagawa_ongoing_bot?start={encoded}"))
+                                    qual_btns.append(InlineKeyboardButton(f"{btn_formatter.get(qual, qual+'p')}", url=f"https://t.me/{Var.BOT_USERNAME}?start={encoded}"))
                                     try:
                                         if ospath.exists(out_path):
                                             os.remove(out_path)
