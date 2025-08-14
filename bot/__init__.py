@@ -75,8 +75,8 @@ class Var:
 
     LOW_END_RENAME = True
 
-    BOT_USERNAME = getenv('BOT_USERNAME', "TheSasukeRoBot")
-    CREATION_USERNAME = getenv('CREATION_USERNAME', "GenAutoAnimeBot")
+    BOT_USERNAME = getenv('BOT_USERNAME', "Marin_Kitagawa_ongoing_bot")
+    CREATION_USERNAME = getenv('CREATION_USERNAME', "Shinobu_Kochoobot")
     
     SEND_SCHEDULE = getenv("SEND_SCHEDULE", "False").lower() == "true"
     BRAND_UNAME = getenv("BRAND_UNAME", "@GenAnimeOfc")
