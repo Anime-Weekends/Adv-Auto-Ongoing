@@ -22,34 +22,37 @@ MANUAL_ANILIST_NAMES = {
 }
 
 CAPTION_FORMAT = """
-<b><i><blockquote>➥ {title}</blockquote></i></b>
-
-<b>   ➪ Episode: {ep_no}</b>
-<b>   ➪ Quality: 480p | 720p | 1080p</b> 
-<b>   ➪ Audio: Japanese & English Sub</b>
-
-<b>   ☏ Powerd By : - @Sanctuary_Stardust</b>
-"""
+<b><blockquote>✦ {title} ✦</blockquote></b>
+────────────────────
+<b>›› Eᴘɪsᴏᴅᴇ : {ep_no}</b>
+<b>›› Qᴜᴀʟɪᴛʏ : 480ᴘ | 720ᴘ | 1080ᴘ | Hᴅʀɪᴘ</b>
+<b>›› Lᴀɴɢᴜᴀɢᴇ :  Jᴀᴘᴀɴᴇsᴇ & ᴇɴɢʟɪsʜ sᴜʙ</b>
+────────────────────
+<b><blockquote>〄 Pᴏᴡᴇʀᴇᴅ ʙʏ : <a href="https://t.me/Eminence_Society">Eᴍɪɴᴇɴᴄᴇ sᴏᴄɪᴇᴛʏ</a></b></blockquote>
+<b><blockquote>≡ ᴜꜱᴇ ᴠʟᴄ ᴘʟᴀʏᴇʀ ᴏʀ ᴍx ᴘʟᴀʏᴇʀ ᴛᴏ ᴄʜᴀɴɢᴇ ᴀᴜᴅɪᴏ ᴀɴᴅ ꜱᴜʙᴛɪᴛʟᴇꜱ, ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴏɴ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ꜰɪʟᴇ ʙᴏᴛ</b></blockquote>"""
 
 MOVIE_CAPTION = """<blockquote><b>✦ {title} ✦</b></blockquote>
-<b>╔━━━━━━━━━━━━━━━━━━━━━╗</b>
-<blockquote><b>⌲ 𝗧𝘆𝗽𝗲: <i>Movie</i></b>
-<b>❍ 𝗘𝗽𝗶𝘀𝗼𝗱𝗲: <i>{ep_no}</i></b></blockquote>
-<blockquote><b>〄 𝗔𝘂𝗱𝗶𝗼: <i>{lang}</i></b>
-<b>❐ 𝗦𝘁𝗮𝘁𝘂𝘀: <i>{status}</i></b></blockquote>
-<blockquote><b>◎ 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻: <i>{dura}</i></b>
-<b>♡ 𝗚𝗲𝗻𝗿𝗲𝘀: <i>{genres}</i></b></blockquote>
-<b>╚━━━━━━━━━━━━━━━━━━━━━╝</b>"""
+────────────────────
+<b>›› Tʏᴘᴇ : Mᴏᴠɪᴇ </b>
+<b>›› Eᴘɪsᴏᴅᴇ : {ep_no}</b>
+<b>›› Aᴜᴅɪᴏ: {lang}</b>
+<b>›› Sᴛᴀᴛᴜs : {status}</b>
+<b>›› Dᴜʀᴀᴛɪᴏɴ : {dura}</b>
+<b>›› Gᴇɴʀᴇs : {genres}</b>
+────────────────────
+<b><blockquote>〄 Pᴏᴡᴇʀᴇᴅ ʙʏ : <a href="https://t.me/Eminence_Society">Eᴍɪɴᴇɴᴄᴇ sᴏᴄɪᴇᴛʏ</a></b></blockquote>
+<b><blockquote>≡ ᴜꜱᴇ ᴠʟᴄ ᴘʟᴀʏᴇʀ ᴏʀ ᴍx ᴘʟᴀʏᴇʀ ᴛᴏ ᴄʜᴀɴɢᴇ ᴀᴜᴅɪᴏ ᴀɴᴅ ꜱᴜʙᴛɪᴛʟᴇꜱ, ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴏɴ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ꜰɪʟᴇ ʙᴏᴛ</b></blockquote>"""
 
 MANGA_CAPTION_FORMAT = """<blockquote><b>✦ {title} ✦</b></blockquote>
-<b>╔━━━━━━━━━━━━━━━━━━━━━╗</b>
-<blockquote><b>⌲ 𝗧𝘆𝗽𝗲:</b> <i>Manga</i>
-<b>❍ 𝗦𝘁𝗮𝘁𝘂𝘀:</b> <i>Releasing</i></blockquote>
-<blockquote><b>◎ 𝗩𝗼𝗹𝘂𝗺𝗲:</b> <i>{volume}</i>
-<b>⎇ 𝗖𝗵𝗮𝗽𝘁𝗲𝗿:</b> <i>{chapter}</i></blockquote>
-<blockquote><b>♡ 𝗚𝗲𝗻𝗿𝗲𝘀:</b> <i>{genres}</i>
-<b>▸ 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻:</b> <i>{description}</i></blockquote>
-<b>╚━━━━━━━━━━━━━━━━━━━━━╝</b>"""
+────────────────────
+<b>›› Tʏᴘᴇ : Mᴀɴɢᴀ</b>
+<b>›› Sᴛᴀᴛᴜs : Rᴇʟᴇᴀsɪɴɢ</b>
+<b>›› Vᴏʟᴜᴍᴇ : {volume}</b>
+<b>›› Cʜᴀᴘᴛᴇʀ : {chapter}</b>
+<b>›› Gᴇɴʀᴇs : {genres}</b>
+<b>›› Dᴇsᴄʀɪᴘᴛɪᴏɴ :</b> {description}
+────────────────────
+<b><blockquote>〄 Pᴏᴡᴇʀᴇᴅ ʙʏ : <a href="https://t.me/Eminence_Society">Eᴍɪɴᴇɴᴄᴇ sᴏᴄɪᴇᴛʏ</a></b></blockquote>"""
 
 
 GENRES_EMOJI = {"Action": "👊", "Adventure": choice(['🪂', '🧗‍♀']), "Comedy": "🤣", "Drama": " 🎭", "Ecchi": choice(['💋', '🥵']), "Fantasy": choice(['🧞', '🧞‍♂', '🧞‍♀','🌗']), "Hentai": "🔞", "Horror": "☠", "Mahou Shoujo": "☯", "Mecha": "🤖", "Music": "🎸", "Mystery": "🔮", "Psychological": "♟", "Romance": "💞", "Sci-Fi": "🛸", "Slice of Life": choice(['☘','🍁']), "Sports": "⚽️", "Supernatural": "🫧", "Thriller": choice(['🥶', '🔪','🤯'])}
