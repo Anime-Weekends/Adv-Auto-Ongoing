@@ -7,3 +7,7 @@ with Client("usergen", api_id=API_ID, api_hash=API_HASH) as app:
     print("\nYour user session string:\n")
     print(app.export_session_string())
     print("\nCopy and paste this string into your config.env as USER_SESSION.")
+
+#──────────────────────
+#────────ᴊᴇғғʏ ᴅᴇᴠ─────────
+#──────────────────────
