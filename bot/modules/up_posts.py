@@ -142,11 +142,11 @@ async def upcoming_animes():
             async with ClientSession() as ses:
                 res = await ses.get("https://subsplease.org/api/?f=schedule&h=true&tz=Asia/Kolkata")
                 aniContent = jloads(await res.text())["schedule"]
-            text = "<blockquote><b>Today's Anime Releases Schedule [IST]</b></blockquote>\n\n"
+            text = "<blockquote><b>〄 Today's Anime Releases Schedule [IST]</b></blockquote>\n\n"
             for i in aniContent:
                 aname = TextEditor(i["title"])
                 await aname.load_anilist()
-                text += f'''<blockquote> <a href="https://subsplease.org/shows/{i['page']}">{aname.adata.get('title', {}).get('english') or i['title']}</a>\n    • <b>Time</b> : {i["time"]} hrs\n\n</blockquote>'''
+                text += f'''<blockquote>›› <a href="https://subsplease.org/shows/{i['page']}">{aname.adata.get('title', {}).get('english') or i['title']}</a>\n• <b>Time</b> : {i["time"]} hrs\n</blockquote>──\n'''
             TD_SCHR = await bot.send_message(Var.MAIN_CHANNEL, text)
             await (await TD_SCHR.pin()).delete()
         except Exception as err:
@@ -156,39 +156,6 @@ async def upcoming_animes():
     await rep.report("Auto Restarting..!!", "info")
     execl(executable, executable, "-m", "bot")
 
-async def upcoming_animes():
-    if Var.SEND_SCHEDULE:
-        try:
-            async with ClientSession() as ses:
-                res = await ses.get("https://subsplease.org/api/?f=schedule&h=true&tz=Asia/Kolkata")
-                aniContent = jloads(await res.text())["schedule"]
-
-            # Build the text schedule
-            text = "<b>Today's Anime Releases Schedule [IST]</b>\n\n"
-            for i in aniContent:
-                aname = TextEditor(i["title"])
-                await aname.load_anilist()
-                text += f'''📌 <a href="https://subsplease.org/shows/{i['page']}">{aname.adata.get('title', {}).get('english') or i['title']}</a>\n    • <b>Time</b> : {i["time"]} hrs\n\n'''
-
-            # ✅ Attach your own image here
-            img_url = "https://example.com/your-image.jpg"
-
-            TD_SCHR = await bot.send_photo(
-                Var.MAIN_CHANNEL,
-                photo=img_url,
-                caption=text,
-                parse_mode="html"
-            )
-
-            await (await TD_SCHR.pin()).delete()
-
-        except Exception as err:
-            await rep.report(str(err), "error")
-
-    if not ffQueue.empty():
-        await ffQueue.join()
-    await rep.report("Auto Restarting..!!", "info")
-    execl(executable, executable, "-m", "bot")
 
 async def update_shdr(name, link):
     if TD_SCHR is not None:
