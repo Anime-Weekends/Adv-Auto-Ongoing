@@ -1602,26 +1602,28 @@ async def create_anime_channel(name, aniInfo):
             if is_movie:
                 caption = f"""<b><blockquote>{display_title}</blockquote>
 
-<blockquote>‣ Genres : {genres}
-‣ Type : {anime_type}
-‣ Average Rating : {avg_rating}
-‣ Status : {status}
-‣ Release Date : {start_date.get("year", '')}-{start_date.get("month", '')}-{start_date.get("day", '')}
-‣ Duration : {runtime} minutes</blockquote>
-<blockquote expandable>‣ Synopsis : <i>{desc}</i></blockquote expandable>
+<blockquote>‣ Gᴇɴʀᴇs : {genres}
+‣ Tʏᴘᴇ : {anime_type}
+‣ Aᴠᴇʀᴀɢᴇ ʀᴀᴛɪɴɢ : {avg_rating}
+‣ Sᴛᴀᴛᴜs : {status}
+‣ Rᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ: {start_date.get("year", '')}-{start_date.get("month", '')}-{start_date.get("day", '')}
+‣ Dᴜʀᴀᴛɪᴏɴ : {runtime} minutes</blockquote>
+
+<blockquote expandable>‣ Sʏɴᴏᴘsɪs : <i>{desc}</i></blockquote>
 </b>"""
             else:
                 caption = f"""<b><blockquote>{display_title}</blockquote>
 
-<blockquote>‣ Genres : {genres}
-‣ Type : {anime_type}
-‣ Average Rating : {avg_rating}
-‣ Status : {status}
-‣ First aired : {start_date.get("year", '')}-{start_date.get("month", '')}-{start_date.get("day", '')}
-‣ Last aired : {end_date.get("year", '')}-{end_date.get("month", '')}-{end_date.get("day", '')}
-‣ Runtime : {runtime} minutes
-‣ No of episodes : {episodes}</blockquote>
-<blockquote expandable>‣ Synopsis : <i>{desc}</i></blockquote expandable>
+<blockquote>‣ Gᴇɴʀᴇs : {genres}
+‣ Tʏᴘᴇ : {anime_type}
+‣ Aᴠᴇʀᴀɢᴇ ʀᴀᴛɪɴɢ : {avg_rating}
+‣ Sᴛᴀᴛᴜs : {status}
+‣ Fɪʀsᴛ ᴀɪʀᴇᴅ : {start_date.get("year", '')}-{start_date.get("month", '')}-{start_date.get("day", '')}
+‣ Lᴀsᴛ ᴀɪʀᴇᴅ : {end_date.get("year", '')}-{end_date.get("month", '')}-{end_date.get("day", '')}
+‣ Rᴜɴᴛɪᴍᴇ : {runtime} minutes
+‣ Nᴏ ᴏғ ᴇᴘɪsᴏᴅᴇs : {episodes}</blockquote>
+
+<blockquote expandable>‣ Sʏɴᴏᴘsɪs : <i>{desc}</i></blockquote>
 </b>"""
 
 
@@ -1631,7 +1633,7 @@ async def create_anime_channel(name, aniInfo):
                 caption=caption
             )
 
-            STICKER_ID = "CAACAgUAAxkBAAIERmhruO6M5RpLtZjb2yrvPJxTuw0IAAIzEwACTrLwVSdrhgIPuK1TNgQ"
+            STICKER_ID = "CAACAgUAAxkBAAEPXv5oxogTeaN34oLKszLqCTudHhv73wACahcAAoNhMFZ3tCnYZNM56TYE"
             await user_client.send_sticker(channel_id, STICKER_ID)
 
             await rep.report("Intro poster, caption, and sticker sent to channel", "info")
