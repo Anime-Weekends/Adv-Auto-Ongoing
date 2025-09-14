@@ -78,16 +78,16 @@ class FFEncoder:
                 
                 progress_str = f"""<blockquote>‣ <b>Anime Name :</b> <b><i>{self.__name}</i></b></blockquote>
 ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
-<blockquote>‣ <b>Status :</b> <i>Encoding</i>
+<blockquote>›› <b>Sᴛᴀᴛᴜs :</b> <i>ᴇɴᴄᴏᴅɪɴɢ</i>
     <code>[{bar}]</code> {percent}%</blockquote> 
 ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
-<blockquote>   ‣ <b>Size :</b> {convertBytes(ensize)} out of ~ {convertBytes(tsize)}
-    ‣ <b>Speed :</b> {convertBytes(speed)}/s
-    ‣ <b>Time Took :</b> {convertTime(diff)}
-    ‣ <b>Time Left :</b> {convertTime(eta)}
-    ‣ <b>Quality:</b> {self.__qual}p</blockquote>
+<blockquote>›› <b>Sɪᴢᴇ :</b> {convertBytes(ensize)} out of ~ {convertBytes(tsize)}
+›› <b>Sᴘᴇᴇᴅ :</b> {convertBytes(speed)}/s
+›› <b>Tɪᴍᴇ ᴛᴏᴏᴋ :</b> {convertTime(diff)}
+›› <b>Tɪᴍᴇ ʟᴇғᴛ :</b> {convertTime(eta)}
+›› <b>Qᴜᴀʟɪᴛʏ :</b> {self.__qual}p</blockquote>
 ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
-<blockquote>‣ <b>File(s) Encoded:</b> <code>{Var.QUALS.index(self.__qual)} / {len(Var.QUALS)}</code></blockquote>"""
+<blockquote>‣ <b>Fɪʟᴇ (s) ᴇɴᴄᴏᴅᴇᴅ :</b> <code>{Var.QUALS.index(self.__qual)} / {len(Var.QUALS)}</code></blockquote>"""
             
                 await editMessage(self.message, progress_str)
                 if (prog := findall(r"progress=(\w+)", text)) and prog[-1] == 'end':
@@ -216,3 +216,7 @@ class FFEncoder:
                 self.__proc.kill()
             except:
                 pass
+
+#──────────────────────
+#───────ᴇᴍɪᴛɪɴɢ sᴛᴀʀs────────
+#──────────────────────
