@@ -89,15 +89,19 @@ class TgUploader:
                 total_files = "1"
 
             progress_str = f"""<blockquote>‣ <b>Anime Name :</b> <b><i>{self.__name}</i></b></blockquote>
-
-<blockquote>›› <b>Sᴛᴀᴛᴜs :</b> <i>Uploading</i>
+─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
+<blockquote>›› <b>Sᴛᴀᴛᴜs :</b> <i>ᴜᴘʟᴏᴀᴅɪɴɢ</i>
     <code>[{bar}]</code> {percent}%</blockquote>
-    
+─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
 <blockquote>›› <b>Sɪᴢᴇ :</b> {convertBytes(current)} out of ~ {convertBytes(total)}
 ›› <b>Sᴘᴇᴇᴅ :</b> {convertBytes(speed)}/s
 ›› <b>Tɪᴍᴇ ᴛᴏᴏᴋ :</b> {convertTime(diff)}
 ›› <b>Tɪᴍᴇ ʟᴇғᴛ :</b> {convertTime(eta)}</blockquote>
-
+─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
 <blockquote>‣ <b>Fɪʟᴇ (s) ᴇɴᴄᴏᴅᴇᴅ :</b> <code>{files_encoded} / {total_files}</code></blockquote>"""
             
             await editMessage(self.message, progress_str)
+
+#──────────────────────
+#───────ᴇᴍɪᴛɪɴɢ sᴛᴀʀs────────
+#──────────────────────
