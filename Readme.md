@@ -1,10 +1,10 @@
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 <h2 align="center">
-    ──「 ᴀɴɪᴍᴇ ɴᴇᴡs ʙᴏᴛ 」──
+    ──「 ᴀᴜᴛᴏ ᴏɴɢᴏɪɴɢ ᴀɴɪᴍᴇ 」──
 </h2>
 
 <p align="center">
-  <img src="https://i.ibb.co/5XJ0LPtf/photo-2025-08-09-20-57-40-7536954231886970884.jpg">
+  <img src="https://i.ibb.co/21z9L09V/photo-2025-09-14-06-21-54-7549916550560481284.jpg">
 </p>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
