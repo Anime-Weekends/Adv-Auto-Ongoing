@@ -1,3 +1,7 @@
+#──────────────────────
+#────────ᴊᴇғғʏ ᴅᴇᴠ─────────
+#──────────────────────
+
 from json import loads as jloads
 from os import path as ospath, execl
 from sys import executable
