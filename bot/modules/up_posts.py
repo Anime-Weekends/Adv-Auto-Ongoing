@@ -32,6 +32,7 @@ from bot.core.database import db
 from bot import bot, bot_loop, Var, ani_cache
 import datetime
 import asyncio
+from pyrogram.enums import ParseMode
 
 DB_URI = Var.MONGO_URI
 
@@ -149,7 +150,7 @@ async def upcoming_animes():
                 res = await ses.get("https://subsplease.org/api/?f=schedule&h=true&tz=Asia/Kolkata")
                 aniContent = jloads(await res.text())["schedule"]
 
-            text = "<b>〄 Tᴏᴅᴀʏ's ᴀɴɪᴍᴇ ʀᴇʟᴇᴀsᴇs sᴄʜᴇᴅᴜʟᴇ [ɪsᴛ]</b>\n────────────────────\n"
+            text = "────────────────────\n<b>〄 Tᴏᴅᴀʏ's ᴀɴɪᴍᴇ ʀᴇʟᴇᴀsᴇs sᴄʜᴇᴅᴜʟᴇ [ɪsᴛ]</b>\n────────────────────\n"
             for i in aniContent:
                 aname = TextEditor(i["title"])
                 await aname.load_anilist()
@@ -160,7 +161,7 @@ async def upcoming_animes():
                 Var.MAIN_CHANNEL,
                 photo="https://telegra.ph/HgBotz-09-14-4",   # Replace with your image
                 caption=text,
-                parse_mode="html"
+                parse_mode=ParseMode.HTML
             )
 
             # Pin & auto-delete pin message
