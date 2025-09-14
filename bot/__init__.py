@@ -51,7 +51,7 @@ class Var:
         LOGS.critical('Important Variables Missing. Fill Up and Retry..!! Exiting Now...')
         exit(1)
 
-    MONGO_NAME = getenv("MONGO_NAME", "AutoAnime")
+    MONGO_NAME = getenv("MONGO_NAME", "OngoingSubAuto")
     USER_SESSION = getenv("USER_SESSION")
     HENTAI_RSS = getenv("HENTAI_RSS", "https://sukebei.nyaa.si/?page=rss&c=1_1&f=0")
     RSS_LOW_END = {
@@ -68,18 +68,18 @@ class Var:
     FILE_STORE = int(getenv("FILE_STORE"))
     ADMINS = list(map(int, getenv("ADMINS", "").split()))
     SEND_STICKER = getenv('SEND_STICKER', 'True').lower() == 'true'
-    STICKER_ID = getenv('STICKER_ID', 'CAACAgUAAyEFAASONkiwAAIo-Wgh5TEAAeEO7-N-vwRUDsa8ULtBMAAC2hQAAoKXOFQpfnYq4DrQ8DYE')
+    STICKER_ID = getenv('STICKER_ID', 'CAACAgUAAxkBAAEPXt9oxmVkc9iyM71xuH7ZSD-jd6S1BgAC0xcAAqK9MVZP1DIkudaEhjYE')
     STICKER_INTERVAL = int(getenv('STICKER_INTERVAL', 2))
 
     MAX_RETRIES = int(getenv("MAX_RETRIES", "15"))
 
     LOW_END_RENAME = True
 
-    BOT_USERNAME = getenv('BOT_USERNAME', "Marin_Kitagawa_ongoing_bot")
-    CREATION_USERNAME = getenv('CREATION_USERNAME', "Shinobu_Kochoobot")
+    BOT_USERNAME = getenv('BOT_USERNAME', "Aqua_Hoshino_Xbot")
+    CREATION_USERNAME = getenv('CREATION_USERNAME', "OngoingAutoAnimeBot")
     
     SEND_SCHEDULE = getenv("SEND_SCHEDULE", "False").lower() == "true"
-    BRAND_UNAME = getenv("BRAND_UNAME", "@GenAnimeOfc")
+    BRAND_UNAME = getenv("BRAND_UNAME", "@Eminence_Society")
     HENTAI_FFMPEG = getenv("HENTAI_FFMPEG", 'ffmpeg -i "{}" -metadata title="{}" -metadata:s:s title="{}" -metadata:s:a title="{}" -metadata:s:v title="{}" -c copy "{}" -y')
     LOW_END_FFMPEG = getenv("LOW_END_FFMPEG", 'ffmpeg -i "{}" -metadata title="{}" -metadata:s:s title="{}" -metadata:s:a title="{}" -metadata:s:v title="{}" -c copy "{}" -y')
     FFCODE_HDRi = getenv("FFCODE_HDRi") or """ffmpeg -i '{}' -progress '{}' -preset superfast -c:v libx264 -s 1920x1080 -pix_fmt yuv420p -crf 30 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2 -ab 32k -vbr 2 -level 3.1 '{}' -y"""
@@ -97,7 +97,7 @@ class Var:
     CUSTOM_BANNER = getenv("CUSTOM_BANNER", "https://envs.sh/LyC.jpg")        
     AUTO_DEL = getenv("AUTO_DEL", "True").lower() == "true"
     DEL_TIMER = int(getenv("DEL_TIMER", "1800"))
-    START_PHOTO = getenv("START_PHOTO", "https://preview.redd.it/6dq40vj38ya91.png?width=1920&format=png&auto=webp&s=24a6a912b10a3bfe1da72adf3bcbfbe9ab5e31f7")
+    START_PHOTO = getenv("START_PHOTO", "https://telegra.ph/HgBotz-09-14")
     START_MSG = getenv("START_MSG", "<blockquote><b>ʜᴇʏ {first_name}</b>,</blockquote>\n<i><blockquote>ɪ'ᴍ ᴀɴ ᴀᴜᴛᴏ ᴀɴɪᴍᴇ ꜱᴛᴏʀᴇ & ᴇɴᴄᴏᴅɪɴɢ ʙᴏᴛ, ʙᴜɪʟᴛ ᴡɪᴛʜ ʟᴏᴠᴇ.</blockquote></i>\n\n<blockquote>❝ ᴛʜᴇ ᴅɪꜰꜰᴇʀᴇɴᴄᴇ ʙᴇᴛᴡᴇᴇɴ ᴛʜᴇ ᴡɪɴɴᴇʀꜱ ᴀɴᴅ ʟᴏꜱᴇʀꜱ ɪꜱ ʜᴏᴡ ᴛʜᴇʏ ᴅᴇᴀʟ ᴡɪᴛʜ ᴛʜᴇɪʀ ꜰᴀᴛᴇ. ❞</blockquote>\n<blockquote>― <i>ᴋɪʏᴏᴛᴀᴋᴀ ᴀʏᴀɴᴏᴋᴏᴊɪ</i></blockquote>")
     START_BUTTONS = getenv("START_BUTTONS", "ᴍᴀɪɴ-ᴄʜᴀɴɴᴇʟ|https://telegram.me/genanimeofc sᴜᴘᴘᴏʀᴛ|https://telegram.me/genanimeofcchat")
 
