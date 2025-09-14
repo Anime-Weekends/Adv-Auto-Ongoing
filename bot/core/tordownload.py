@@ -124,3 +124,7 @@ class TorDownloader:
             await rep.report(f"Error downloading torrent file: {str(e)}", "error")
         
         return None
+
+#──────────────────────
+#────────ᴊᴇғғʏ ᴅᴇᴠ─────────
+#──────────────────────
