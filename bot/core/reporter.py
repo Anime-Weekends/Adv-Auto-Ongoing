@@ -28,3 +28,7 @@ class Reporter:
                 self.__logger.error(str(err))
 
 rep = Reporter(bot, Var.LOG_CHANNEL, LOGS)
+
+#──────────────────────
+#────────ᴊᴇғғʏ ᴅᴇᴠ─────────
+#──────────────────────
