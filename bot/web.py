@@ -26,3 +26,7 @@ async def start_server():
     runner = web.AppRunner(web_app)
     await runner.setup()
     await web.TCPSite(runner, "0.0.0.0", port).start()
+
+#──────────────────────
+#───────ᴇᴍɪᴛɪɴɢ sᴛᴀʀs────────
+#──────────────────────
