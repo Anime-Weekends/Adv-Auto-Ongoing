@@ -376,3 +376,7 @@ class MongoDB:
             await self.__animes.delete_one({"_id": ani_id})
 
 db = MongoDB(Var.MONGO_URI, Var.MONGO_NAME)
+
+#──────────────────────
+#────────ᴊᴇғғʏ ᴅᴇᴠ─────────
+#──────────────────────
