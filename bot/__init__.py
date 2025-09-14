@@ -98,8 +98,8 @@ class Var:
     AUTO_DEL = getenv("AUTO_DEL", "True").lower() == "true"
     DEL_TIMER = int(getenv("DEL_TIMER", "1800"))
     START_PHOTO = getenv("START_PHOTO", "https://telegra.ph/HgBotz-09-14")
-    START_MSG = getenv("START_MSG", "<blockquote><b>ʜᴇʏ {first_name}</b>,</blockquote>\n<i><blockquote>ɪ'ᴍ ᴀɴ ᴀᴜᴛᴏ ᴀɴɪᴍᴇ ꜱᴛᴏʀᴇ & ᴇɴᴄᴏᴅɪɴɢ ʙᴏᴛ, ʙᴜɪʟᴛ ᴡɪᴛʜ ʟᴏᴠᴇ.</blockquote></i>\n\n<blockquote>❝ ᴛʜᴇ ᴅɪꜰꜰᴇʀᴇɴᴄᴇ ʙᴇᴛᴡᴇᴇɴ ᴛʜᴇ ᴡɪɴɴᴇʀꜱ ᴀɴᴅ ʟᴏꜱᴇʀꜱ ɪꜱ ʜᴏᴡ ᴛʜᴇʏ ᴅᴇᴀʟ ᴡɪᴛʜ ᴛʜᴇɪʀ ꜰᴀᴛᴇ. ❞</blockquote>\n<blockquote>― <i>ᴋɪʏᴏᴛᴀᴋᴀ ᴀʏᴀɴᴏᴋᴏᴊɪ</i></blockquote>")
-    START_BUTTONS = getenv("START_BUTTONS", "ᴍᴀɪɴ-ᴄʜᴀɴɴᴇʟ|https://telegram.me/genanimeofc sᴜᴘᴘᴏʀᴛ|https://telegram.me/genanimeofcchat")
+    START_MSG = getenv("START_MSG", "<blockquote>✦ ɪ’ᴍ ᴀɴ ᴀᴜᴛᴏ ᴀɴɪᴍᴇ sᴛᴏʀᴇ & ᴇɴᴄᴏᴅɪɴɢ ʙᴏᴛ. ʙᴜɪʟᴛ sʜᴀʀᴘ. ʙᴜɪʟᴛ ᴛᴏ ʟᴀsᴛ.</blockquote>\n─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n<blockquote expandable>❝  ɪ ᴡᴀɴᴛᴇᴅ ᴛᴏ ᴄʀᴜsʜ ᴛʜᴇ ᴘɪɴɴᴀᴄʟᴇ ᴏғ ᴛʜᴇ ᴊᴜᴊᴜᴛsᴜ ᴡᴏʀʟᴅ ᴀɴᴅ ᴛʜᴇ ᴢᴇɴ’ɪɴ ғᴀᴍɪʟʏ, ᴊᴜsᴛ ғᴏʀ sᴇʟғ-ᴀғғɪʀᴍᴀᴛɪᴏɴ… ᴀɴᴅ ɪɴ ᴅᴏɪɴɢ sᴏ, ɪ ʜᴀᴅ ᴀʟʀᴇᴀᴅʏ ʟᴏsᴛ.  ❞</blockquote>\n<blockquote>― Tᴏᴊɪ ғᴜsʜɪɢᴜʀᴏ</blockquote>")
+    START_BUTTONS = getenv("START_BUTTONS", "Eᴍɪɴᴇɴᴄᴇ sᴏᴄɪᴇᴛʏ|https://t.me/Eminence_Society Dᴇᴠ|https://t.me/RexySama")
 
 if Var.THUMB and not ospath.exists("thumb.jpg"):
     system(f"wget -q {Var.THUMB} -O thumb.jpg")
