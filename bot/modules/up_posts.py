@@ -31,6 +31,7 @@ from pyrogram.errors import FloodWait, MessageNotModified
 from bot.core.database import db
 from bot import bot, bot_loop, Var, ani_cache
 import datetime
+import asyncio
 
 DB_URI = Var.MONGO_URI
 
@@ -140,21 +141,43 @@ async def update_shdr(name, link):
         await TD_SCHR.edit("\n".join(TD_lines))
 
 
+
 async def upcoming_animes():
     if Var.SEND_SCHEDULE:
         try:
             async with ClientSession() as ses:
                 res = await ses.get("https://subsplease.org/api/?f=schedule&h=true&tz=Asia/Kolkata")
                 aniContent = jloads(await res.text())["schedule"]
-            text = "<blockquote><b>〄 Tᴏᴅᴀʏ's ᴀɴɪᴍᴇ ʀᴇʟᴇᴀsᴇs sᴄʜᴇᴅᴜʟᴇ [ɪsᴛ]</b></blockquote>\n────────────────────\n"
+
+            text = "<b>〄 Tᴏᴅᴀʏ's ᴀɴɪᴍᴇ ʀᴇʟᴇᴀsᴇs sᴄʜᴇᴅᴜʟᴇ [ɪsᴛ]</b>\n────────────────────\n"
             for i in aniContent:
                 aname = TextEditor(i["title"])
                 await aname.load_anilist()
-                text += f'''<blockquote>›› <a href="https://subsplease.org/shows/{i['page']}">{aname.adata.get('title', {}).get('english') or i['title']}</a>\n• <b>Tɪᴍᴇ</b> : {i["time"]} ʜʀs\n</blockquote>──\n'''
-            TD_SCHR = await bot.send_message(Var.MAIN_CHANNEL, text)
+                text += f'''›› <a href="https://subsplease.org/shows/{i['page']}">{aname.adata.get('title', {}).get('english') or i['title']}</a>\n• <b>Tɪᴍᴇ</b> : {i["time"]} ʜʀs\n──\n'''
+
+            # 1. Send image + text together
+            TD_SCHR = await bot.send_photo(
+                Var.MAIN_CHANNEL,
+                photo="https://telegra.ph/HgBotz-09-14-4",   # Replace with your image
+                caption=text,
+                parse_mode="html"
+            )
+
+            # Pin & auto-delete pin message
             await (await TD_SCHR.pin()).delete()
+
+            # 2. Delay before sticker
+            await asyncio.sleep(2)
+
+            # 3. Send sticker
+            await bot.send_sticker(
+                Var.MAIN_CHANNEL,
+                sticker="CAACAgUAAxkBAAEPXv5oxogTeaN34oLKszLqCTudHhv73wACahcAAoNhMFZ3tCnYZNM56TYE"  # Replace with your sticker file_id
+            )
+
         except Exception as err:
             await rep.report(str(err), "error")
+
     if not ffQueue.empty():
         await ffQueue.join()
     await rep.report("Auto Restarting..!!", "info")
