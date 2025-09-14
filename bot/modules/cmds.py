@@ -1436,7 +1436,7 @@ async def start_msg(client, message):
         await db.add_user(uid)
     except Exception:
         pass
-    temp = await sendMessage(message, "<blockquote><i>Connecting...</i></blockquote>")
+    temp = await sendMessage(message, "<pre>待って、かわい子ちゃん</pre>")
     if not await is_fsubbed(uid):
         txt, btns = await get_fsubs(uid, txtargs)
         return await editMessage(temp, txt, InlineKeyboardMarkup(btns))
