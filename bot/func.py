@@ -69,3 +69,7 @@ async def gen_ss_sam(hash, filename, log):
         return hash, out
     except Exception as err:
         log.error(str(err))
+
+#──────────────────────
+#───────ᴇᴍɪᴛɪɴɢ sᴛᴀʀs────────
+#──────────────────────
