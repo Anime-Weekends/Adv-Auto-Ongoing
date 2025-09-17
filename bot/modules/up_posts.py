@@ -150,11 +150,11 @@ async def upcoming_animes():
                 res = await ses.get("https://subsplease.org/api/?f=schedule&h=true&tz=Asia/Kolkata")
                 aniContent = jloads(await res.text())["schedule"]
 
-            text = "────────────────────\n<b>〄 Tᴏᴅᴀʏ's ᴀɴɪᴍᴇ ʀᴇʟᴇᴀsᴇs sᴄʜᴇᴅᴜʟᴇ [ɪsᴛ]</b>\n────────────────────\n"
+            text = "────────────────────\n<b><blockquote>〄 Tᴏᴅᴀʏ's ᴀɴɪᴍᴇ ʀᴇʟᴇᴀsᴇs sᴄʜᴇᴅᴜʟᴇ [ɪsᴛ]</blockquote></b>\n────────────────────\n"
             for i in aniContent:
                 aname = TextEditor(i["title"])
                 await aname.load_anilist()
-                text += f'''›› <a href="https://subsplease.org/shows/{i['page']}">{aname.adata.get('title', {}).get('english') or i['title']}</a>\n• <b>Tɪᴍᴇ</b> : {i["time"]} ʜʀs\n──\n'''
+                text += f'''<blockquote>›› <a href="https://subsplease.org/shows/{i['page']}">{aname.adata.get('title', {}).get('english') or i['title']}</a>\n• <b>Tɪᴍᴇ</b> : {i["time"]} ʜʀs</blockquote>\n──\n'''
 
             # 1. Send image + text together
             TD_SCHR = await bot.send_photo(
