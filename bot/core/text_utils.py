@@ -21,14 +21,15 @@ MANUAL_ANILIST_NAMES = {
     "Im Living With an Otaku NEET Kunoichi": "I'm Living With an Otaku NEET Kunoichi"
 }
 
-CAPTION_FORMAT = """
+CAPTION_FORMAT = """ㅤ
 <b><blockquote>◈ {title}</blockquote></b>
 
 <b>›› Eᴘɪsᴏᴅᴇ : {ep_no}</b>
 <b>›› Qᴜᴀʟɪᴛʏ : 480ᴘ | 720ᴘ | 1080ᴘ | Hᴅʀɪᴘ</b>
 <b>›› Lᴀɴɢᴜᴀɢᴇ :  Jᴀᴘᴀɴᴇsᴇ & ᴇɴɢʟɪsʜ sᴜʙ</b>
 
-<b><blockquote>≡ ᴜꜱᴇ <a href="https://play.google.com/store/apps/details?id=org.videolan.vlc">ᴠʟᴄ ᴘʟᴀʏᴇʀ</a> ᴏʀ <a href="">ᴍx ᴘʟᴀʏᴇʀ</a> ᴛᴏ ᴄʜᴀɴɢᴇ ᴀᴜᴅɪᴏ ᴀɴᴅ ꜱᴜʙᴛɪᴛʟᴇꜱ, ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴏɴ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ꜰɪʟᴇ ʙᴏᴛ</b></blockquote>"""
+<b><blockquote>≡ ᴜꜱᴇ <a href="https://play.google.com/store/apps/details?id=org.videolan.vlc">ᴠʟᴄ ᴘʟᴀʏᴇʀ</a> ᴏʀ <a href="https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad">ᴍx ᴘʟᴀʏᴇʀ</a> ᴛᴏ ᴄʜᴀɴɢᴇ ᴀᴜᴅɪᴏ ᴀɴᴅ ꜱᴜʙᴛɪᴛʟᴇꜱ, ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴏɴ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ꜰɪʟᴇ ʙᴏᴛ</b></blockquote>
+ㅤ"""
 
 MOVIE_CAPTION = """─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
 <blockquote><b>✦ {title} ✦</b></blockquote>
