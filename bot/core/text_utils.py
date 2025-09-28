@@ -22,15 +22,13 @@ MANUAL_ANILIST_NAMES = {
 }
 
 CAPTION_FORMAT = """
-─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
-<b><blockquote>✦ {title} ✦</blockquote></b>
-─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
+<b><blockquote>◈ {title}</blockquote></b>
+
 <b>›› Eᴘɪsᴏᴅᴇ : {ep_no}</b>
 <b>›› Qᴜᴀʟɪᴛʏ : 480ᴘ | 720ᴘ | 1080ᴘ | Hᴅʀɪᴘ</b>
 <b>›› Lᴀɴɢᴜᴀɢᴇ :  Jᴀᴘᴀɴᴇsᴇ & ᴇɴɢʟɪsʜ sᴜʙ</b>
-────────────────────
-<b><blockquote>〄 Pᴏᴡᴇʀᴇᴅ ʙʏ : <a href="https://t.me/Eminence_Society">Eᴍɪɴᴇɴᴄᴇ sᴏᴄɪᴇᴛʏ</a></b></blockquote>
-<b><blockquote>≡ ᴜꜱᴇ ᴠʟᴄ ᴘʟᴀʏᴇʀ ᴏʀ ᴍx ᴘʟᴀʏᴇʀ ᴛᴏ ᴄʜᴀɴɢᴇ ᴀᴜᴅɪᴏ ᴀɴᴅ ꜱᴜʙᴛɪᴛʟᴇꜱ, ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴏɴ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ꜰɪʟᴇ ʙᴏᴛ</b></blockquote>"""
+
+<b><blockquote>≡ ᴜꜱᴇ <a href="https://play.google.com/store/apps/details?id=org.videolan.vlc">ᴠʟᴄ ᴘʟᴀʏᴇʀ</a> ᴏʀ <a href="">ᴍx ᴘʟᴀʏᴇʀ</a> ᴛᴏ ᴄʜᴀɴɢᴇ ᴀᴜᴅɪᴏ ᴀɴᴅ ꜱᴜʙᴛɪᴛʟᴇꜱ, ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴏɴ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ꜰɪʟᴇ ʙᴏᴛ</b></blockquote>"""
 
 MOVIE_CAPTION = """─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
 <blockquote><b>✦ {title} ✦</b></blockquote>
