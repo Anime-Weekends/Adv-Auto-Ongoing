@@ -1609,8 +1609,8 @@ async def create_anime_channel(name, aniInfo):
 ‣ Rᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ: {start_date.get("year", '')}-{start_date.get("month", '')}-{start_date.get("day", '')}
 ‣ Dᴜʀᴀᴛɪᴏɴ : {runtime} minutes</blockquote>
 ─━━━━━━━━━━─
-<blockquote expandable><b>⌲ Sʏɴᴏᴘsɪs</b> : <i>{desc}</i></blockquote>
-</b>"""
+<blockquote expandable><b>⌲ Sʏɴᴏᴘsɪs</b> : <i>{desc}</i></blockquote></b>
+<b><blockquote>〄 Pᴏᴡᴇʀᴇᴅ ʙʏ : <a href="https://t.me/Eminence_Society">Eᴍɪɴᴇɴᴄᴇ sᴏᴄɪᴇᴛʏ</a></b></blockquote>"""
             else:
                 caption = f"""<b><blockquote>❐ {display_title}</blockquote>
 ─━━━━━━━━━━─
@@ -1623,8 +1623,8 @@ async def create_anime_channel(name, aniInfo):
 ‣ Rᴜɴᴛɪᴍᴇ : {runtime} minutes
 ‣ Nᴏ ᴏғ ᴇᴘɪsᴏᴅᴇs : {episodes}</blockquote>
 ─━━━━━━━━━━─
-<blockquote expandable><b>⌲ Sʏɴᴏᴘsɪs</b> : <i>{desc}</i></blockquote>
-</b>"""
+<blockquote expandable><b>⌲ Sʏɴᴏᴘsɪs</b> : <i>{desc}</i></blockquote></b>
+<b><blockquote>〄 Pᴏᴡᴇʀᴇᴅ ʙʏ : <a href="https://t.me/Eminence_Society">Eᴍɪɴᴇɴᴄᴇ sᴏᴄɪᴇᴛʏ</a></b></blockquote>"""
 
 
             await user_client.send_photo(
