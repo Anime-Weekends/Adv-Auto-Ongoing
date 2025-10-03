@@ -1600,20 +1600,20 @@ async def create_anime_channel(name, aniInfo):
 
 
             if is_movie:
-                caption = f"""<b><blockquote>{display_title}</blockquote>
-
+                caption = f"""<b><blockquote>❐ {display_title}</blockquote>
+─━━━━━━━━━━─
 <blockquote>‣ Gᴇɴʀᴇs : {genres}
 ‣ Tʏᴘᴇ : {anime_type}
 ‣ Aᴠᴇʀᴀɢᴇ ʀᴀᴛɪɴɢ : {avg_rating}
 ‣ Sᴛᴀᴛᴜs : {status}
 ‣ Rᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ: {start_date.get("year", '')}-{start_date.get("month", '')}-{start_date.get("day", '')}
 ‣ Dᴜʀᴀᴛɪᴏɴ : {runtime} minutes</blockquote>
-
-<blockquote expandable>‣ Sʏɴᴏᴘsɪs : <i>{desc}</i></blockquote>
+─━━━━━━━━━━─
+<blockquote expandable><b>⌲ Sʏɴᴏᴘsɪs</b> : <i>{desc}</i></blockquote>
 </b>"""
             else:
-                caption = f"""<b><blockquote>{display_title}</blockquote>
-
+                caption = f"""<b><blockquote>❐ {display_title}</blockquote>
+─━━━━━━━━━━─
 <blockquote>‣ Gᴇɴʀᴇs : {genres}
 ‣ Tʏᴘᴇ : {anime_type}
 ‣ Aᴠᴇʀᴀɢᴇ ʀᴀᴛɪɴɢ : {avg_rating}
@@ -1622,8 +1622,8 @@ async def create_anime_channel(name, aniInfo):
 ‣ Lᴀsᴛ ᴀɪʀᴇᴅ : {end_date.get("year", '')}-{end_date.get("month", '')}-{end_date.get("day", '')}
 ‣ Rᴜɴᴛɪᴍᴇ : {runtime} minutes
 ‣ Nᴏ ᴏғ ᴇᴘɪsᴏᴅᴇs : {episodes}</blockquote>
-
-<blockquote expandable>‣ Sʏɴᴏᴘsɪs : <i>{desc}</i></blockquote>
+─━━━━━━━━━━─
+<blockquote expandable><b>⌲ Sʏɴᴏᴘsɪs</b> : <i>{desc}</i></blockquote>
 </b>"""
 
 
